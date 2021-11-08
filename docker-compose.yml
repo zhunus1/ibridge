@@ -37,7 +37,6 @@ services:
     build:
       context: ./nginx
       dockerfile: Dockerfile
-    restart: always
     depends_on:
       - gunicorn
     ports:
