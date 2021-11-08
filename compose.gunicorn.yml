@@ -32,8 +32,6 @@ services:
     ports:
       - 8000:8000
     command: /start-gunicorn
-    networks:
-      main: {}
 
   nginx:
     build:
@@ -56,13 +54,8 @@ services:
       - POSTGRES_DB=root
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=root
-    networks:
-      main: {}
 
 volumes:
   local_postgres_data: {}
   local_media_data: {}
   local_static_data: {}
-
-networks:
-  main: {}
