@@ -10,7 +10,7 @@ services:
     depends_on:
       - postgres
     volumes:
-      - .:/gunicorn
+      - .:/django
       - local_media_data:/media
       - local_static_data:/static
     environment:
@@ -30,7 +30,7 @@ services:
     expose:
       - 8000
     ports:
-      - 8080:8000
+      - 8000:8000
     command: /start-django
     networks:
       main: {}
