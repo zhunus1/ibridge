@@ -38,7 +38,7 @@ services:
       context: ./nginx
       dockerfile: Dockerfile
     depends_on:
-      - django
+      - gunicorn
     ports:
       - "80:80"
       - "443:443"
