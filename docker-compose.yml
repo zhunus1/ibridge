@@ -27,8 +27,6 @@ services:
       - MEDIA_PATH=/media
       - STATIC_PATH=/static
       - WORKERS=2
-    expose:
-      - 8000
     ports:
       - "8000:8000"
     command: /start-gunicorn
