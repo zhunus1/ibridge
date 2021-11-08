@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  django: &django
+  gunicorn: &django
     build:
       context: ./ibridge_backend
       dockerfile: ./Dockerfile
@@ -31,7 +31,7 @@ services:
       - 8000
     ports:
       - 8000:8000
-    command: /start-django
+    command: /start-gunicorn
     networks:
       main: {}
 
@@ -40,7 +40,7 @@ services:
       context: ./nginx
       dockerfile: Dockerfile
     depends_on:
-      - django
+      - gunicorn
     ports:
       - 80:80
       - 443:443

@@ -16,9 +16,9 @@ RUN pip install --upgrade pip
 COPY ./requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
 
-COPY ./start.django.sh /start-django
-RUN sed -i 's/\r$//g' /start-django
-RUN chmod +x /start-django
+COPY ./start.gunicorn.sh /start-gunicorn
+RUN sed -i 's/\r$//g' /start-gunicorn
+RUN chmod +x /start-gunicorn
 
 ADD . /app/
 
