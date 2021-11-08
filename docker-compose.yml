@@ -28,7 +28,7 @@ services:
       - STATIC_PATH=/static
       - WORKERS=2
     ports:
-      - "8000:80"
+      - "8000:8000"
     command: /start-gunicorn
     networks:
       main: {}
