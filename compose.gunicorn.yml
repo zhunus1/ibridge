@@ -10,7 +10,7 @@ services:
     depends_on:
       - postgres
     volumes:
-      - .:/django
+      - .:/gunicorn
       - local_media_data:/media
       - local_static_data:/static
     environment:
@@ -42,8 +42,7 @@ services:
     depends_on:
       - gunicorn
     ports:
-      - 80:80
-      - 443:443
+      - 1337:80
 
   postgres:
     image: postgres:latest
