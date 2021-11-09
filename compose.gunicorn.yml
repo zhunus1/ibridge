@@ -77,6 +77,12 @@ services:
 volumes:
   certbot-etc:
   certbot-var:
+  web-root:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/sammy/ibridge/views/
+      o: bind
   local_postgres_data: {}
   local_media_data: {}
   local_static_data: {}
