@@ -37,8 +37,6 @@ services:
     image: nginx:latest
     ports:
       - 8080:80
-    volumes:
-      - ./templates:/etc/nginx/templates
     depends_on:
       - gunicorn
 
