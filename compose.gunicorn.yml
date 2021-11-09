@@ -33,6 +33,15 @@ services:
       - 8000:8000
     command: /start-gunicorn
 
+  nginx:
+    image: nginx:latest
+    ports:
+      - 8080:80
+    volumes:
+      - ./templates:/etc/nginx/templates
+    depends_on:
+      - gunicorn
+
   postgres:
     image: postgres:latest
     restart: always
