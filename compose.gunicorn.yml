@@ -44,6 +44,7 @@ services:
       - 80:80
       - 443:443
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+
   certbot:
     image: certbot/certbot
     restart: unless-stopped
@@ -58,7 +59,7 @@ services:
     volumes:
       - local_postgres_data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_HOST=postgres
+      - POSTGRES_HOST=185.121.81.120
       - POSTGRES_PORT=5432
       - POSTGRES_DB=root
       - POSTGRES_USER=root
