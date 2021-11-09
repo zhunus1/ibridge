@@ -59,7 +59,7 @@ services:
     volumes:
       - local_postgres_data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_HOST=185.121.81.120
+      - POSTGRES_HOST=localhost
       - POSTGRES_PORT=5432
       - POSTGRES_DB=root
       - POSTGRES_USER=root
