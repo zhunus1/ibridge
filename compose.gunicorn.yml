@@ -26,22 +26,12 @@ services:
       - DJANGO_SUPERUSER_PASSWORD=root
       - MEDIA_PATH=/media
       - STATIC_PATH=/static
-      - WORKERS=2
+      - WORKERS=3
     expose:
       - 8000
     ports:
       - 8000:8000
     command: /start-gunicorn
-
-  nginx:
-    build:
-      context: ./nginx
-      dockerfile: Dockerfile
-    depends_on:
-      - gunicorn
-    ports:
-      - 80:80
-      - 443:443
 
   postgres:
     image: postgres:latest
